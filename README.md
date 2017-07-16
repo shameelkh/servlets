@@ -35,8 +35,8 @@ Add `maven-war-plugin` to package project into war file: `mvn clean package`
 
 ### WEB-INF/web.xml
 
-Defines your servlets (the url path, and which servlet class to execute). 
-Simple servlet example:
+Defines your servlets (the url path, and which servlet class to execute).
+Simple servlet example (can be run on `http://localhost:8080/SimpleServlet/welcome`):
 
 ```
     <servlet>
@@ -49,4 +49,19 @@ Simple servlet example:
         <servlet-name>simpleServlet</servlet-name>
         <url-pattern>/welcome</url-pattern>
     </servlet-mapping>
+```
+
+### Servlet Class 
+
+A class that extends `HttpServlet` and overrides following methods:
+
+```
+public class SimpleServlet extends HttpServlet {
+
+    @Override
+    void doGet(HttpServletRequest request, HttpServletResponse response) { }
+    
+    @Override
+    void doPost(HttpServletRequest request, HttpServletResponse response) { }
+}
 ```
