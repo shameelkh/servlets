@@ -19,4 +19,34 @@ Defines dependency on servlet api. Note scope is set to `provided`.
     </dependencies>
 ```
 
+Add `maven-war-plugin` to package project into war file: `mvn clean package`
+
+```
+     <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+            <warSourceDirectory>src/main/webapp</warSourceDirectory>
+            <warName>SimpleServlet</warName>
+        </configuration>
+    </plugin>
+```
+
 ### WEB-INF/web.xml
+
+Defines your servlets (the url path, and which servlet class to execute). 
+Simple servlet example:
+
+```
+    <servlet>
+        <servlet-name>simpleServlet</servlet-name>
+        <servlet-class>SimpleServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>simpleServlet</servlet-name>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+```
