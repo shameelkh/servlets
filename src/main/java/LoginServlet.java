@@ -12,6 +12,8 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        request.setAttribute("username", username);
+
         String url = "/random.jsp";
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher(url);
         requestDispatcher.forward(request, response);

@@ -1,6 +1,8 @@
 <html>
 <head><title>Welcome to a JSP</title></head>
 <body>
+  <h1>Welcome <%= request.getParameter("username") %>
+
   <%
     double num = Math.random();
     if (num > 0.95) {
