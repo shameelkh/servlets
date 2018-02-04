@@ -10,5 +10,8 @@
         Password: <input type="password" /> <br />
         <input type="submit" value="Log In"/>
     </form>
+
+
+    <p><%= getServletContext().getAttribute("startUpAttribute")%></p>
 </body>
 </html>
